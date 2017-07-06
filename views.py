@@ -599,6 +599,13 @@ def badge_test(badge_name):
 
 
 if __name__ == "__main__":
+    from flask_migrate import Migrate, MigrateCommand
+    from flask_script import Manager
+
+    migrate = Migrate(app, db)
+    manager = Manager(app)
+    manager.add_command('db', MigrateCommand)
+    manager.run()
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True, threaded=True)
 
