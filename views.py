@@ -224,7 +224,11 @@ def profile_endpoint(orcid_id):
         print u"saving log_temp_profile for {}".format(my_person)
         temp_profile_log = add_new_log_temp_profile(my_person, request)
 
-    return json_resp(my_person.to_dict())
+    person_data = my_person.to_dict()
+
+    person_data['products'] = Product.query.filter_by(orcid_id=orcid_id).all()
+    person_data['badges'] = Badge.query.filter_by(orcid_id=orcid_id).all()
+    return json_resp(person_data)
 
 
 

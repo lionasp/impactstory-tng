@@ -48,7 +48,7 @@ def get_orcid_id_from_oauth(auth_code, redirect_uri):
     )
 
     access_token_url = 'https://pub.orcid.org/oauth/token'
-    payload = dict(client_id="APP-PF0PDMP7P297AU8S",
+    payload = dict(client_id="APP-QO42OBB0WJXS3322",
                    redirect_uri=redirect_uri,
                    client_secret=os.getenv('ORCID_CLIENT_SECRET'),
                    code=auth_code,
