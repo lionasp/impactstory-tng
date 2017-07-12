@@ -1569,7 +1569,7 @@ angular.module('currentUser', [
             console.log("ORCID authenticate!", intent, orcidAlreadyExists)
 
             var authUrl = "https://orcid.org/oauth/authorize" +
-                "?client_id=APP-PF0PDMP7P297AU8S" +
+                "?client_id=APP-QO42OBB0WJXS3322" +
                 "&response_type=code" +
                 "&scope=/authenticate" +
                 "&redirect_uri=" + redirectUri

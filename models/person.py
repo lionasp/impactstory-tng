@@ -201,7 +201,7 @@ def connect_twitter(my_person, twitter_creds, set_everything_possible=False):
     my_person.twitter = full_twitter_profile["screen_name"]
 
     if set_everything_possible:
-        my_person.email = full_twitter_profile["email"]
+        my_person.email = full_twitter_profile.get("email", "fake@mail.com")
         twitter_full_name = full_twitter_profile["name"]
 
         try:
